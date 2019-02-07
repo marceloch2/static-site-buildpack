@@ -28,6 +28,7 @@ http {
     <% end %>
 
     location / {
+			max_ranges 0;
       <% if ENV["NGINX_HTPASSWD"] %>
         auth_basic "this site is protected";
         auth_basic_user_file <%= ENV["NGINX_HTPASSWD"] %>;
